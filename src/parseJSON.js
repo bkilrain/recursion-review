@@ -3,5 +3,15 @@
 
 // but you're not, so you'll write it from scratch:
 var parseJSON = function(json) {
-  // your code goes here
+  var char;
+  var position;
+
+  var next = function() {
+    position++;
+    char = json.charAt(position);
+  };
+
+
+
+
 };
