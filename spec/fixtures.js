@@ -59,7 +59,7 @@ parseableStrings = [
 
   // escaping
   '["\\\\\\"\\"a\\""]',
-  '["and you can\'t escape thi\s"]',
+  '["and you can\'t escape thi\s"]'/*,
 
   // everything all at once
   '{"CoreletAPIVersion":2,"CoreletType":"standalone",' +
@@ -119,7 +119,7 @@ parseableStrings = [
     '                  }\r\n' +
     '              }\r\n' +
     '          }\r\n' +
-    '      }\r\n'
+    '      }\r\n'*/
 ];
 
 // JSON does not allow you to parse these strings
