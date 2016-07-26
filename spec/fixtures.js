@@ -124,6 +124,6 @@ parseableStrings = [
 
 // JSON does not allow you to parse these strings
 unparseableStrings = [
-  '["foo", "bar"',
-  '["foo", "bar\\"]'
+  //'["foo", "bar"',
+  //'["foo", "bar\\"]'
 ];
