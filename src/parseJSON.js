@@ -14,6 +14,24 @@ var parseJSON = function(json) {
 
   // sort function
     // check char and call correct parse function
+  var sort = function() {
+    if (char === 't' || char === 'f' || char === 'n') {
+      isBoolNull();
+    } else if (char === '-' || typeof char === 'number') {
+      isNumber();
+    } else if (char === '"') {
+      isString();
+    } else if (char === '[') {
+      next();
+      isArray();
+    } else if (char === '{') {
+      isObject();
+    } else if (char === ' ') {
+      next();
+      sort();
+    }
+  }
+
 
   // boolean and null function
 
@@ -49,9 +67,25 @@ var parseJSON = function(json) {
   }
   // string function
   var isString = function(){
-    var regex = 
+    var regex = /".+?"/;
+    var str = regex.exec(json.slice(position));
+    var moveAmount = str[0].length;
+    var noQuotes = str[0].slice(1, -1);
+    next(moveAmount);
+    return noQuotes;
   }
   // array function
+  var isArray = function() {
+    var resultsArr = [];
+    
+    while (char !== ']') {
+      resultsArr.push(sort()); 
+      if (char !== ']') {
+        next();
+      }
+    }
+    return resultsArr; 
+  }
 
   // object function
 
